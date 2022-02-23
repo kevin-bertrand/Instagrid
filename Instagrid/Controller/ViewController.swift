@@ -76,8 +76,18 @@ class ViewController: UIViewController {
     
     @objc private func performSwipe(sender: UIGestureRecognizer) {
         // TODO: Check direction (2 = left & 4 = up) to perform actions. Warning: The value(forKey) return an optional!
-        print(sender.value(forKey: "direction"))
-        showShareView()
+        print()
+        UIView.animate(withDuration: 1) {
+            if let direction = sender.value(forKey: "direction") as? Int {
+                if direction == 2 {
+                    self.pictureView.transform = CGAffineTransform(translationX: -UIScreen.main.bounds.width, y: 0)
+                } else if direction == 4 {
+                    self.pictureView.transform = CGAffineTransform(translationX: 0, y: -UIScreen.main.bounds.height)
+                }
+            }
+        } completion: { _ in
+            self.showShareView()
+        }
     }
     
     // FIXME: Cannot share the view in a message
@@ -94,9 +104,12 @@ class ViewController: UIViewController {
                 self.showAlertWhenSharingIsFinished(withTitle: "An error has occured", andMessage: "The application was not able to share the image")
             } else if completed {
                 self.pictureView.resetGrid()
-                self.showAlertWhenSharingIsFinished(withTitle: "Sharing complete", andMessage: "Your photo has been correctly shared")
-                
                 self.checkSelectedLayout(.allFour)
+                self.showAlertWhenSharingIsFinished(withTitle: "Sharing complete", andMessage: "Your photo has been correctly shared")
+            }
+            
+            UIView.animate(withDuration: 1) {
+                self.pictureView.transform = .identity
             }
         }
     }
