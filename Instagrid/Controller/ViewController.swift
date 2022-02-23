@@ -5,6 +5,7 @@
 //  Created by Kevin Bertrand on 22/02/2022.
 //
 
+import PhotosUI
 import UIKit
 
 class ViewController: UIViewController {
@@ -14,6 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var swipeLeftToShareView: UIView!
     @IBOutlet weak var swipeUpToShareView: UIView!
     @IBOutlet weak var pictureView: PicturesView!
+    
+    // MARK: Properties
+    private var selectedImageButton: UIButton?
     
     // MARK: View methods
     override func viewDidLoad() {
@@ -38,7 +42,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func selectImageButtonTouched(_ sender: UIButton) {
-        
+        selectedImageButton = sender
+        showImagePicker()
     }
     
     // MARK: Methods
@@ -72,6 +77,47 @@ class ViewController: UIViewController {
     @objc private func performSwipe(sender: UIGestureRecognizer) {
         // TODO: Check direction (2 = left & 4 = up). Warning: The value(forKey) return an optional!
         print(sender.value(forKey: "direction"))
+    }
+}
+
+extension ViewController: PHPickerViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    private func showImagePicker() {
+        if #available(iOS 14.0, *) {
+            var pickerConfiguration = PHPickerConfiguration()
+            pickerConfiguration.filter = .images
+            pickerConfiguration.selectionLimit = 1
+            let imagePicker = PHPickerViewController(configuration: pickerConfiguration)
+            imagePicker.delegate = self
+            present(imagePicker, animated: true, completion: nil)
+        } else {
+            let imagePickerVC = UIImagePickerController()
+            imagePickerVC.sourceType = .photoLibrary
+            imagePickerVC.delegate = self
+            present(imagePickerVC, animated: true, completion: nil)
+        }
+    }
+    
+    @available(iOS 14, *)
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        dismiss(animated: true, completion: nil)
+        guard !results.isEmpty else { return }
+        
+        results[0].itemProvider.loadObject(ofClass: UIImage.self) { object, error in
+            if let image = object as? UIImage,
+               let imageButton = self.selectedImageButton {
+                DispatchQueue.main.async {
+                    imageButton.setImage(image, for: .normal)
+                }
+            }
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.originalImage] as? UIImage,
+           let imageButton = selectedImageButton {
+            imageButton.setImage(image, for: .normal)
+        }
+        dismiss(animated: true, completion: nil)
     }
 }
 

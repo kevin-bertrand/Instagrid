@@ -160,7 +160,7 @@
                                 <connections>
                                     <outlet property="bottomLeftImageButton" destination="IvP-Qg-Eld" id="HDq-1F-XuJ"/>
                                     <outlet property="bottomRightImageButton" destination="tf8-uQ-VT7" id="C1J-cb-dng"/>
-                                    <outlet property="topLeftImageButton" destination="HLk-VR-FMV" id="cXI-KW-C5k"/>
+                                    <outlet property="topLeftImageButton" destination="HLk-VR-FMV" id="Ljp-Bv-dvG"/>
                                     <outlet property="topRightImageButton" destination="drK-Xv-pMq" id="xC5-fz-VGv"/>
                                 </connections>
                             </view>

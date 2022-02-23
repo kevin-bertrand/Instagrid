@@ -42,16 +42,20 @@ class PicturesView: UIView {
     }
     
     func resetGrid() {
-        let defaultImage = UIImage(named: "Plus")
-        topLeftImageButton.setImage(defaultImage, for: .normal)
-        topRightImageButton.setImage(defaultImage, for: .normal)
-        bottomLeftImageButton.setImage(defaultImage, for: .normal)
-        bottomRightImageButton.setImage(defaultImage, for: .normal)
+        resetButton(topLeftImageButton)
+        resetButton(topRightImageButton)
+        resetButton(bottomRightImageButton)
+        resetButton(bottomLeftImageButton)
         
         layout = .allFour
         
         self.layer.shadowOffset = CGSize(width: 3, height: 3)
         self.layer.shadowRadius = 6
         self.layer.shadowOpacity = 0.2
+    }
+    
+    private func resetButton(_ button: UIButton) {
+        button.setImage(UIImage(named: "Plus"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFill
     }
 }
