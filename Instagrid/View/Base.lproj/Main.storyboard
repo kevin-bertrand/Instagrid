@@ -72,13 +72,13 @@
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="Tvk-4V-R8d" userLabel="Layout 3 Selected">
                                 <rect key="frame" x="774.66666666666663" y="299.66666666666669" width="87.333333333333371" height="87.333333333333314"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvy-Zj-RBw" userLabel="Picture view">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvy-Zj-RBw" userLabel="Picture view" customClass="PicturesView" customModule="Instagrid" customModuleProvider="target">
                                 <rect key="frame" x="312" y="85" width="302" height="302"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Z6a-XK-M0G">
                                         <rect key="frame" x="15" y="15" width="272" height="128.66666666666666"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLk-VR-FMV">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLk-VR-FMV" userLabel="Top left image">
                                                 <rect key="frame" x="0.0" y="0.0" width="128.66666666666666" height="128.66666666666666"/>
                                                 <color key="backgroundColor" red="0.94901353119999998" green="0.94901353119999998" blue="0.94901353119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -87,7 +87,7 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="Plus"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drK-Xv-pMq">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drK-Xv-pMq" userLabel="Top right image">
                                                 <rect key="frame" x="143.66666666666669" y="0.0" width="128.33333333333331" height="128.66666666666666"/>
                                                 <color key="backgroundColor" red="0.94901353119999998" green="0.94901353119999998" blue="0.94901353119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -102,7 +102,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="W2L-xh-BPa">
                                         <rect key="frame" x="15" y="158.66666666666663" width="272" height="128.33333333333337"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IvP-Qg-Eld">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IvP-Qg-Eld" userLabel="Bottom left image">
                                                 <rect key="frame" x="0.0" y="0.0" width="128.66666666666666" height="128.33333333333334"/>
                                                 <color key="backgroundColor" red="0.94901353119999998" green="0.94901353119999998" blue="0.94901353119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -111,7 +111,7 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="" image="Plus"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tf8-uQ-VT7">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tf8-uQ-VT7" userLabel="Bottom right image">
                                                 <rect key="frame" x="143.66666666666669" y="0.0" width="128.33333333333331" height="128.33333333333334"/>
                                                 <color key="backgroundColor" red="0.94901353119999998" green="0.94901353119999998" blue="0.94901353119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -135,6 +135,12 @@
                                     <constraint firstItem="Z6a-XK-M0G" firstAttribute="leading" secondItem="fvy-Zj-RBw" secondAttribute="leading" constant="15" id="gqt-2V-aw4"/>
                                     <constraint firstItem="W2L-xh-BPa" firstAttribute="top" secondItem="Z6a-XK-M0G" secondAttribute="bottom" constant="15" id="pp0-3T-X7k"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="bottomLeftImageButton" destination="IvP-Qg-Eld" id="HDq-1F-XuJ"/>
+                                    <outlet property="bottomRightImageButton" destination="tf8-uQ-VT7" id="C1J-cb-dng"/>
+                                    <outlet property="topLeftImageButton" destination="HLk-VR-FMV" id="cXI-KW-C5k"/>
+                                    <outlet property="topRightImageButton" destination="drK-Xv-pMq" id="xC5-fz-VGv"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PtI-tB-pLk" userLabel="Swipe left to share">
                                 <rect key="frame" x="54" y="85" width="248" height="302"/>
