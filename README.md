@@ -14,7 +14,7 @@ This app is used to make collage of different pictures. This collage can be shar
 
 ## Technical constraints
 The application must respect the following constraints:
-- Available only for iPhone
+- Available only on iPhone
 - Available on all version of iOS from iOS 11
 - Supports Portrait and Landscape orientation 
 - Supports all iPhone sizes from iPhone SE to iPhone 13 Pro Max
