@@ -75,8 +75,36 @@ class ViewController: UIViewController {
     }
     
     @objc private func performSwipe(sender: UIGestureRecognizer) {
-        // TODO: Check direction (2 = left & 4 = up). Warning: The value(forKey) return an optional!
+        // TODO: Check direction (2 = left & 4 = up) to perform actions. Warning: The value(forKey) return an optional!
         print(sender.value(forKey: "direction"))
+        showShareView()
+    }
+    
+    // FIXME: Cannot share the view in a message
+    private func showShareView() {
+        let imageToShare = pictureView.renderAsUIImage()
+        let sharingObject = [imageToShare]
+        let activityViewController = UIActivityViewController(activityItems: sharingObject, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        present(activityViewController, animated: true)
+        
+        // Show a message that inform the user that the sharing is completed or not
+        activityViewController.completionWithItemsHandler = {(activityType, completed, returnedItems, error) in
+            if error != nil {
+                self.showAlertWhenSharingIsFinished(withTitle: "An error has occured", andMessage: "The application was not able to share the image")
+            } else if completed {
+                self.pictureView.resetGrid()
+                self.showAlertWhenSharingIsFinished(withTitle: "Sharing complete", andMessage: "Your photo has been correctly shared")
+                
+                self.checkSelectedLayout(.allFour)
+            }
+        }
+    }
+    
+    private func showAlertWhenSharingIsFinished(withTitle title: String, andMessage message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
 
