@@ -28,9 +28,9 @@ class PicturesView: UIView {
         case .allFour:
             break
         case .oneImageBottom:
-            bottomLeftImageButton.isHidden = true
+            bottomRightImageButton.isHidden = true
         case .oneImageTop:
-            topLeftImageButton.isHidden = true
+            topRightImageButton.isHidden = true
         }
     }
     
