@@ -58,4 +58,11 @@ class PicturesView: UIView {
         button.setImage(UIImage(named: "Plus"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFill
     }
+    
+    func renderAsUIImage() -> UIImage {
+        let renderer = UIGraphicsImageRenderer(size: self.bounds.size)
+        return renderer.image { context in
+            self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+        }
+    }
 }
