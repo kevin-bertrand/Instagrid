@@ -1,4 +1,4 @@
-# Instagrid-UIKit
+# Instagrid
 ## Presentation
 This app is used to make collage of different pictures. This collage can be share with other people or saved inside the photo library.
 
