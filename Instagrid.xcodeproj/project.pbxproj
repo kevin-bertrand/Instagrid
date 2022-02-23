@@ -16,6 +16,7 @@
 		06B7924727C58083000297E4 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 06B7924527C58083000297E4 /* ThirstySoftRegular.otf */; };
 		06B7924827C58083000297E4 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 06B7924627C58083000297E4 /* Delm-Medium.otf */; };
 		06B7924A27C63820000297E4 /* PicturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B7924927C63820000297E4 /* PicturesView.swift */; };
+		06B7924D27C64077000297E4 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B7924C27C64077000297E4 /* Layout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		06B7924527C58083000297E4 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		06B7924627C58083000297E4 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
 		06B7924927C63820000297E4 /* PicturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesView.swift; sourceTree = "<group>"; };
+		06B7924C27C64077000297E4 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		06B7922C27C57D7E000297E4 /* Instagrid */ = {
 			isa = PBXGroup;
 			children = (
+				06B7924B27C6406B000297E4 /* Model */,
 				06B7924327C57DBA000297E4 /* Controller */,
 				06B7924227C57DB0000297E4 /* View */,
 				06B7924127C57D9B000297E4 /* Supporting Files */,
@@ -106,6 +109,14 @@
 				06B7924527C58083000297E4 /* ThirstySoftRegular.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		06B7924B27C6406B000297E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				06B7924C27C64077000297E4 /* Layout.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +194,7 @@
 			files = (
 				06B7923227C57D7E000297E4 /* ViewController.swift in Sources */,
 				06B7922E27C57D7E000297E4 /* AppDelegate.swift in Sources */,
+				06B7924D27C64077000297E4 /* Layout.swift in Sources */,
 				06B7923027C57D7E000297E4 /* SceneDelegate.swift in Sources */,
 				06B7924A27C63820000297E4 /* PicturesView.swift in Sources */,
 			);

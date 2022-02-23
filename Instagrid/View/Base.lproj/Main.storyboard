@@ -43,16 +43,25 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" backgroundImage="Layout 1"/>
+                                        <connections>
+                                            <action selector="selectLayoutButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rU6-Dr-kOm"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMJ-h3-2F7" userLabel="Layout 2">
                                         <rect key="frame" x="0.0" y="107.33333333333334" width="87.333333333333329" height="87.333333333333343"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" backgroundImage="Layout 2"/>
+                                        <connections>
+                                            <action selector="selectLayoutButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lcf-NQ-dWR"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cm0-vA-q9k" userLabel="Layout 3">
                                         <rect key="frame" x="0.0" y="214.66666666666671" width="87.333333333333329" height="87.333333333333343"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" backgroundImage="Layout 3"/>
+                                        <connections>
+                                            <action selector="selectLayoutButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u88-8W-AIb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -86,12 +95,18 @@
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="Plus"/>
+                                                <connections>
+                                                    <action selector="selectImageButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v7Z-k0-TjX"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drK-Xv-pMq" userLabel="Top right image">
                                                 <rect key="frame" x="143.66666666666669" y="0.0" width="128.33333333333331" height="128.66666666666666"/>
                                                 <color key="backgroundColor" red="0.94901353119999998" green="0.94901353119999998" blue="0.94901353119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="Plus"/>
+                                                <connections>
+                                                    <action selector="selectImageButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S8Y-QK-h2P"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -110,12 +125,18 @@
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="" image="Plus"/>
+                                                <connections>
+                                                    <action selector="selectImageButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uQM-qT-ULz"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tf8-uQ-VT7" userLabel="Bottom right image">
                                                 <rect key="frame" x="143.66666666666669" y="0.0" width="128.33333333333331" height="128.33333333333334"/>
                                                 <color key="backgroundColor" red="0.94901353119999998" green="0.94901353119999998" blue="0.94901353119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="Plus"/>
+                                                <connections>
+                                                    <action selector="selectImageButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iqQ-1e-u4d"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -126,6 +147,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.1763019264" green="0.43716382980000001" blue="0.64758282899999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="W2L-xh-BPa" firstAttribute="height" secondItem="Z6a-XK-M0G" secondAttribute="height" id="BfP-Gf-zk8"/>
                                     <constraint firstItem="W2L-xh-BPa" firstAttribute="leading" secondItem="fvy-Zj-RBw" secondAttribute="leading" constant="15" id="BgR-U4-5ZM"/>
                                     <constraint firstAttribute="width" secondItem="fvy-Zj-RBw" secondAttribute="height" multiplier="1:1" id="Cjo-ZR-c3i"/>
                                     <constraint firstAttribute="trailing" secondItem="W2L-xh-BPa" secondAttribute="trailing" constant="15" id="Ep9-BS-Vwa"/>
@@ -254,13 +276,13 @@
                                 <exclude reference="bbx-iv-ndC"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="znF-4Y-vSs"/>
                                 <include reference="2EI-PK-xiM"/>
                                 <exclude reference="DBB-XI-ptg"/>
                                 <exclude reference="J55-0T-QAA"/>
                                 <include reference="UxI-ve-lQX"/>
                                 <exclude reference="W46-Rb-1Ol"/>
                                 <include reference="ir2-Qc-1qM"/>
+                                <exclude reference="znF-4Y-vSs"/>
                                 <include reference="fCA-JY-uFk"/>
                                 <exclude reference="0Pc-aw-jeg"/>
                                 <include reference="5eA-M2-ueK"/>
@@ -277,6 +299,17 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="pictureView" destination="fvy-Zj-RBw" id="i5c-UI-goL"/>
+                        <outlet property="swipeLeftToShareView" destination="PtI-tB-pLk" id="cOn-L6-em8"/>
+                        <outlet property="swipeUpToShareView" destination="bbx-iv-ndC" id="OP8-WI-DHw"/>
+                        <outletCollection property="layoutSelectedImages" destination="ipH-a0-cQN" collectionClass="NSMutableArray" id="Mpt-8I-670"/>
+                        <outletCollection property="layoutSelectedImages" destination="Cjq-R6-ScO" collectionClass="NSMutableArray" id="csL-gk-bwG"/>
+                        <outletCollection property="layoutSelectedImages" destination="Tvk-4V-R8d" collectionClass="NSMutableArray" id="ViG-gm-7pI"/>
+                        <outletCollection property="layoutButtons" destination="gM4-qc-38j" collectionClass="NSMutableArray" id="EC5-bQ-tOy"/>
+                        <outletCollection property="layoutButtons" destination="jMJ-h3-2F7" collectionClass="NSMutableArray" id="GIr-Gf-9dG"/>
+                        <outletCollection property="layoutButtons" destination="cm0-vA-q9k" collectionClass="NSMutableArray" id="g39-KW-xmd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -14,12 +14,6 @@ class PicturesView: UIView {
     @IBOutlet weak var bottomRightImageButton: UIButton!
     @IBOutlet weak var bottomLeftImageButton: UIButton!
     
-    
-    // MARK: Enumerations
-    enum Layout {
-        case oneImageBottom, oneImageTop, allFour
-    }
-    
     // MARK: Properties
     var layout: Layout = .allFour {
         didSet {
