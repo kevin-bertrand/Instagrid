@@ -10,7 +10,7 @@ This app is used to make collage of different pictures. This collage can be shar
 <img src="/screenshots/iPhoneSE-iOS12.4-landscape.png" width="500"> <img src="/screenshots/iPhone13ProMax-iOS15.2-landscape.png" width="500">
 
 ### Share view
-<img src="/screenshots/Share-iOS12.4.png" width="350"> <img src="/screenshots/Share-iOS15.2.png" width="350">
+<img src="/screenshots/Share-iOS12.4.png" width="650"> <img src="/screenshots/Share-iOS15.2.png" width="350">
 
 ## Technical constraints
 The application must respect the following constraints:
