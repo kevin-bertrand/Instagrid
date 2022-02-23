@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         pictureView.resetGrid()
         checkSelectedLayout(.allFour)
+        configureSwipeGesture()
     }
     
     // MARK: Actions
@@ -56,6 +57,21 @@ class ViewController: UIViewController {
     
     private func unselectAllLayoutButtons() {
         layoutSelectedImages.forEach { $0.isHidden = true }
+    }
+    
+    private func configureSwipeGesture() {
+        let swipeGestureRecognizerUp = UISwipeGestureRecognizer(target: self, action: #selector(performSwipe(sender:)))
+        swipeGestureRecognizerUp.direction = .up
+        swipeUpToShareView.addGestureRecognizer(swipeGestureRecognizerUp)
+        
+        let swipeGestureRecognizerLeft = UISwipeGestureRecognizer(target: self, action: #selector(performSwipe(sender:)))
+        swipeGestureRecognizerLeft.direction = .left
+        swipeLeftToShareView.addGestureRecognizer(swipeGestureRecognizerLeft)
+    }
+    
+    @objc private func performSwipe(sender: UIGestureRecognizer) {
+        // TODO: Check direction (2 = left & 4 = up). Warning: The value(forKey) return an optional!
+        print(sender.value(forKey: "direction"))
     }
 }
 
