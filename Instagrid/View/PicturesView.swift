@@ -24,11 +24,7 @@ class PicturesView: UIView {
     // MARK: Public methods
     // This method is call everytime there is a need to reset the grid. By default, the layout is "four images" and all buttons represent a "+" icon.
     func resetGrid() {
-        resetButton(topLeftImageButton)
-        resetButton(topRightImageButton)
-        resetButton(bottomRightImageButton)
-        resetButton(bottomLeftImageButton)
-        
+        resetButtons([topLeftImageButton, topRightImageButton, bottomLeftImageButton, bottomRightImageButton])
         layout = .allFour
         
         // Set a shadow around the grid
@@ -46,9 +42,10 @@ class PicturesView: UIView {
     }
 
     // MARK: Private methods
-    // Change the layout according to the selected layout button
+    /// Change the layout according to the selected layout button
     private func changeGridLayout() {
-        showAllImages()
+        // Show all images on the picture view
+        [topLeftImageButton, topRightImageButton, bottomLeftImageButton, bottomRightImageButton].forEach { $0?.isHidden = false }
         
         // Check the layout to hide an image on the grid if necessary.
         switch layout {
@@ -60,18 +57,12 @@ class PicturesView: UIView {
             topRightImageButton.isHidden = true
         }
     }
-    
-    // Show all 4 picture on the grid
-    private func showAllImages() {
-        topLeftImageButton.isHidden = false
-        topRightImageButton.isHidden = false
-        bottomRightImageButton.isHidden = false
-        bottomLeftImageButton.isHidden = false
-    }
-    
-    // This method reset all buttons of the grid (show a "+" icon)
-    private func resetButton(_ button: UIButton) {
-        button.setImage(UIImage(named: "Plus"), for: .normal)
-        button.imageView?.contentMode = .scaleAspectFill
+
+    /// Reset all buttons of the grid (show a "+" icon)
+    private func resetButtons(_ buttons: [UIButton]) {
+        for button in buttons {
+            button.setImage(UIImage(named: "Plus"), for: .normal)
+            button.imageView?.contentMode = .scaleAspectFill
+        }
     }
 }

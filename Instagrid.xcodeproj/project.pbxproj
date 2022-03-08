@@ -89,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				06B7923327C57D7E000297E4 /* Main.storyboard */,
+				06B7924C27C64077000297E4 /* Layout.swift */,
 				06B7924927C63820000297E4 /* PicturesView.swift */,
 			);
 			path = View;
@@ -114,7 +115,6 @@
 		06B7924B27C6406B000297E4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				06B7924C27C64077000297E4 /* Layout.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

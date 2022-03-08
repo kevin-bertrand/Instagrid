@@ -47,7 +47,7 @@
                                             <action selector="selectLayoutButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rU6-Dr-kOm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMJ-h3-2F7" userLabel="Layout 2">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMJ-h3-2F7" userLabel="Layout 2">
                                         <rect key="frame" x="116" y="0.0" width="96" height="96"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" backgroundImage="Layout 2"/>
@@ -55,7 +55,7 @@
                                             <action selector="selectLayoutButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lcf-NQ-dWR"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cm0-vA-q9k" userLabel="Layout 3">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cm0-vA-q9k" userLabel="Layout 3">
                                         <rect key="frame" x="232" y="0.0" width="96" height="96"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" backgroundImage="Layout 3"/>
@@ -259,6 +259,7 @@
                                 <exclude reference="PtI-tB-pLk"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="fCA-JY-uFk"/>
                                 <exclude reference="2EI-PK-xiM"/>
                                 <exclude reference="UxI-ve-lQX"/>
                                 <exclude reference="ir2-Qc-1qM"/>
@@ -266,7 +267,6 @@
                                 <exclude reference="PG1-dt-hQj"/>
                                 <exclude reference="ojv-37-8xQ"/>
                                 <exclude reference="oyb-Is-DDi"/>
-                                <exclude reference="fCA-JY-uFk"/>
                                 <exclude reference="cdA-mr-caz"/>
                             </mask>
                         </variation>
@@ -276,6 +276,7 @@
                                 <exclude reference="bbx-iv-ndC"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="fCA-JY-uFk"/>
                                 <include reference="2EI-PK-xiM"/>
                                 <exclude reference="DBB-XI-ptg"/>
                                 <exclude reference="J55-0T-QAA"/>
@@ -292,7 +293,6 @@
                                 <exclude reference="qgr-pO-WK5"/>
                                 <exclude reference="uvd-Z6-sf0"/>
                                 <exclude reference="uxz-G3-hdX"/>
-                                <include reference="fCA-JY-uFk"/>
                                 <exclude reference="1V1-1L-M0o"/>
                                 <include reference="cdA-mr-caz"/>
                                 <exclude reference="zpP-cc-1WZ"/>
@@ -306,9 +306,6 @@
                         <outletCollection property="layoutSelectedImages" destination="ipH-a0-cQN" collectionClass="NSMutableArray" id="Mpt-8I-670"/>
                         <outletCollection property="layoutSelectedImages" destination="Cjq-R6-ScO" collectionClass="NSMutableArray" id="csL-gk-bwG"/>
                         <outletCollection property="layoutSelectedImages" destination="Tvk-4V-R8d" collectionClass="NSMutableArray" id="ViG-gm-7pI"/>
-                        <outletCollection property="layoutButtons" destination="gM4-qc-38j" collectionClass="NSMutableArray" id="EC5-bQ-tOy"/>
-                        <outletCollection property="layoutButtons" destination="jMJ-h3-2F7" collectionClass="NSMutableArray" id="GIr-Gf-9dG"/>
-                        <outletCollection property="layoutButtons" destination="cm0-vA-q9k" collectionClass="NSMutableArray" id="g39-KW-xmd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
