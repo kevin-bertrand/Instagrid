@@ -44,24 +44,29 @@ class ViewController: UIViewController {
     private func configureSwipeGesture() {
         let swipeGestureRecognizerUp = UISwipeGestureRecognizer(target: self, action: #selector(performSwipe(sender:)))
         swipeGestureRecognizerUp.direction = .up
-        swipeUpToShareView.addGestureRecognizer(swipeGestureRecognizerUp)
+        pictureView.addGestureRecognizer(swipeGestureRecognizerUp)
         
         let swipeGestureRecognizerLeft = UISwipeGestureRecognizer(target: self, action: #selector(performSwipe(sender:)))
         swipeGestureRecognizerLeft.direction = .left
-        swipeLeftToShareView.addGestureRecognizer(swipeGestureRecognizerLeft)
+        pictureView.addGestureRecognizer(swipeGestureRecognizerLeft)
     }
     
     /// This method is called everytime a gesture is perform on the "swipe up to share view" or on the "swipe left share view"
     @objc private func performSwipe(sender: UIGestureRecognizer) {
-        UIView.animate(withDuration: 1) {
-            if let direction = sender.value(forKey: "direction") as? Int {
-                // The returned gesture direction is an integer and correspond to up if it is 4 and left if it is 2
-                if direction == 2 {
-                    self.pictureView.transform = CGAffineTransform(translationX: -UIScreen.main.bounds.width, y: 0)
-                } else if direction == 4 {
-                    self.pictureView.transform = CGAffineTransform(translationX: 0, y: -UIScreen.main.bounds.height)
-                }
+        if let direction = sender.value(forKey: "direction") as? Int {
+            // The returned gesture direction is an integer and correspond to up if it is 4 and left if it is 2
+            if direction == 2 && UIApplication.shared.statusBarOrientation.isLandscape {
+                makeDisapearViewWithTransformation(CGAffineTransform(translationX: -UIScreen.main.bounds.width, y: 0))
+            } else if direction == 4 && UIApplication.shared.statusBarOrientation.isPortrait {
+                makeDisapearViewWithTransformation(CGAffineTransform(translationX: 0, y: -UIScreen.main.bounds.height))
             }
+        }
+    }
+    
+    /// Perform the animation to disapear the view
+    private func makeDisapearViewWithTransformation(_ transformation: CGAffineTransform) {
+        UIView.animate(withDuration: 1) {
+            self.pictureView.transform = transformation
         } completion: { _ in
             self.showShareView()
         }

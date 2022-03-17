@@ -90,9 +90,6 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLk-VR-FMV" userLabel="Top left image">
                                                 <rect key="frame" x="0.0" y="0.0" width="176.66666666666666" height="176.66666666666666"/>
                                                 <color key="backgroundColor" red="0.94901353119999998" green="0.94901353119999998" blue="0.94901353119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="HLk-VR-FMV" secondAttribute="height" multiplier="1:1" id="D3F-gQ-7jF"/>
-                                                </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="Plus"/>
                                                 <connections>
@@ -120,9 +117,6 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IvP-Qg-Eld" userLabel="Bottom left image">
                                                 <rect key="frame" x="0.0" y="0.0" width="176.66666666666666" height="176.33333333333334"/>
                                                 <color key="backgroundColor" red="0.94901353119999998" green="0.94901353119999998" blue="0.94901353119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="IvP-Qg-Eld" secondAttribute="height" multiplier="1:1" id="knR-YR-I6N"/>
-                                                </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="" image="Plus"/>
                                                 <connections>
