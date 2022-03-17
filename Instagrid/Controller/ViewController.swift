@@ -55,9 +55,9 @@ class ViewController: UIViewController {
     @objc private func performSwipe(sender: UIGestureRecognizer) {
         if let direction = sender.value(forKey: "direction") as? Int {
             // The returned gesture direction is an integer and correspond to up if it is 4 and left if it is 2
-            if direction == 2 && UIDevice.current.orientation.isLandscape {
+            if direction == 2 && UIApplication.shared.statusBarOrientation.isLandscape {
                 makeDisapearViewWithTransformation(CGAffineTransform(translationX: -UIScreen.main.bounds.width, y: 0))
-            } else if direction == 4 && UIDevice.current.orientation.isPortrait {
+            } else if direction == 4 && UIApplication.shared.statusBarOrientation.isPortrait {
                 makeDisapearViewWithTransformation(CGAffineTransform(translationX: 0, y: -UIScreen.main.bounds.height))
             }
         }
